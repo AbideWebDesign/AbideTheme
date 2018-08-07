@@ -1,0 +1,82 @@
+/* Side Navigation */
+#sidebarCollapse {
+	background-color: transparent;
+	border: none;
+}
+
+#side-nav {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: #896B25;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#side-nav.active {
+    left: 0;
+}
+
+#side-nav-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    display: none;
+    top: 0;
+}
+
+#side-nav-dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #000;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#side-nav-menu li {
+	border-bottom: 1px solid #564622;
+	padding: 5px 0;
+	margin: 5px 0;
+}
+
+#side-nav a {
+	color: white;
+}
+
+#side-nav #side-nav-icons {
+	margin: 0 1em;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#side-nav-icons li {
+	margin-bottom: 1em;
+}
+
+#side-nav-icons li a {
+	color: #333;
+}
+
+#side-nav-icons i {
+	font-size: 1em;
+	color: #333;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
