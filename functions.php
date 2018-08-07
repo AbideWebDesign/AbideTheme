@@ -16,6 +16,15 @@ if ( ! function_exists( 'abide_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function abide_setup() {
+		
+		require WP_CONTENT_DIR . '/plugins/plugin-update-checker-master/plugin-update-checker.php';
+		$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+			'https://github.com/AbideWebDesign/AbideTheme',
+			__FILE__,
+			'AbideTheme'
+		);
+		$myUpdateChecker->setBranch('master'); 
+		
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -66,7 +75,6 @@ if ( ! function_exists( 'abide_setup' ) ) :
 		    $wp_admin_bar->remove_menu( 'customize' );
 		}
 		add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
-
 	}
 endif;
 add_action( 'after_setup_theme', 'abide_setup' );
